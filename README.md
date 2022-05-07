@@ -1,2 +1,3 @@
-# user-log-java
-A initial project of a login user in java and spring
+# user-login-java
+A initial login project in java and spring
+

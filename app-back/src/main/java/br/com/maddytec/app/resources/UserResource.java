@@ -22,8 +22,8 @@ public class UserResource {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public User save(@RequestBody User usuario){
-        return userService.save(usuario);
+    public User save(@RequestBody User user){
+        return userService.save(user);
     }
 
     @GetMapping
@@ -43,8 +43,8 @@ public class UserResource {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void removeClient(@PathVariable("id") Long id){
         userService.findById(id)
-                .map(usuario -> {
-                    userService.removerPorId(usuario.getId());
+                .map(user -> {
+                    userService.removerPorId(user.getId());
                     return Void.TYPE;
                 }).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found!"));
     }
